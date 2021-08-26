@@ -2,8 +2,9 @@ import { parseCookies } from "@/helpers/index";
 import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
-import styles from "@/styles/Dashboard.module.css";
+import styled from "styled-components";
 import DashboardEvent from "@/components/DashboardEvent";
+import { FaUser } from "react-icons/fa";
 
 export default function DashboardPage({ events, token }) {
   const router = useRouter();
@@ -29,17 +30,36 @@ export default function DashboardPage({ events, token }) {
 
   return (
     <Layout title="User Dashboard">
-      <div className={styles.dash}>
-        <h1>Dashboard</h1>
+      <DashBoardDetails>
+        <h1>
+          <FaUser /> Dashboard
+        </h1>
         <h3>My Events</h3>
 
         {events.map((evt) => (
           <DashboardEvent key={evt.id} evt={evt} handleDelete={deleteEvent} />
         ))}
-      </div>
+      </DashBoardDetails>
     </Layout>
   );
 }
+
+const DashBoardDetails = styled.main`
+  margin: 2rem 0 0;
+  background-color: #f6f6f6;
+  padding: 3rem 3rem 2.5rem 3rem;
+  box-shadow: 0.5rem 1rem 1.3rem rgba(220, 220, 220, 0.4);
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+`;
 
 export async function getServerSideProps({ req }) {
   const { token } = parseCookies(req);

@@ -1,25 +1,28 @@
 import styled from "styled-components";
 
-export default function Showcase() {
+export default function Banner({ title }) {
   return (
     <HeaderImage>
-      <h1>Welcome To The Party!</h1>
-      <h2>Find the hottest events</h2>
+      <h1>{title}</h1>
     </HeaderImage>
   );
 }
 
 const HeaderImage = styled.div`
   text-align: center;
-  height: 80vh;
-  width: 100%;
+  position: relative;
+  height: 45vh;
   color: #fff;
   display: flex;
-  position: relative;
+  max-width: 113rem;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: #000 url("/images/showcase-1.jpg") no-repeat center center;
+  background: #000 url("/images/banner.jpg") no-repeat center center;
+
+  @media only screen and (max-width: 768px) {
+    height: 30vh;
+  }
 
   & * {
     z-index: 20;
@@ -32,25 +35,20 @@ const HeaderImage = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   h1 {
     font-family: "Shadows Into Light", sans-serif;
-    font-size: 8rem;
     margin-bottom: 0;
+    font-size: 8rem;
 
     @media only screen and (max-width: 768px) {
       font-size: 5rem;
     }
   }
-
-  h2 {
-    font-size: 2.5rem;
-    margin: 0;
-
-    @media only screen and (max-width: 480px) {
-      font-size: 2rem;
-    }
-  }
 `;
+
+Banner.defaultProps = {
+  title: "Upcoming Events",
+};

@@ -1,12 +1,13 @@
 import Layout from "@/components/Layout";
 import Pagination from "@/components/Pagination";
 import { API_URL, PER_PAGE } from "@/config/index";
+import Banner from "@/components/Banner";
 import EventItem from "@/components/EventItem";
 
 export default function HomePage({ events, page, total }) {
   return (
-    <Layout>
-      <h1>Upcoming Events</h1>
+    <Layout title="Events">
+      <Banner title="Upcoming Events" />
       {events.length === 0 && <h3>No events to show</h3>}
 
       {events.map((evt) => (

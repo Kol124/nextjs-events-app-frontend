@@ -1,6 +1,7 @@
 import { useState } from "react";
+import styled from "styled-components";
 import { API_URL } from "@/config/index";
-import styles from "@/styles/Form.module.css";
+import { Button } from "@/components/Button";
 
 export default function ImageUpload({ evtId, imageUploaded, token }) {
   const [image, setImage] = useState(null);
@@ -31,14 +32,42 @@ export default function ImageUpload({ evtId, imageUploaded, token }) {
   };
 
   return (
-    <div className={styles.form}>
+    <Upload>
       <h1>Upload Event Image</h1>
       <form onSubmit={handleSubmit}>
-        <div className={styles.file}>
+        <InputContainer>
           <input type="file" onChange={handleFileChange} />
-        </div>
-        <input type="submit" value="Upload" className="btn" />
+        </InputContainer>
+        <Button type="submit">Upload</Button>
       </form>
-    </div>
+    </Upload>
   );
 }
+
+const Upload = styled.div`
+  text-align: center;
+`;
+
+const InputContainer = styled.section`
+  margin-bottom: 2rem;
+
+  input[type="file"] {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    color: inherit;
+    display: block;
+    font-size: 14px;
+    border-radius: 2px;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid transparent;
+
+    &::-webkit-input-placeholder {
+      color: #f1f1f1;
+    }
+  }
+`;
