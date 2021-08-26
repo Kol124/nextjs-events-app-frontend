@@ -1,10 +1,10 @@
 import { parseCookies } from "@/helpers/index";
-import { useRouter } from "next/router";
-import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
-import styled from "styled-components";
-import DashboardEvent from "@/components/DashboardEvent";
+import { useRouter } from "next/router";
 import { FaUser } from "react-icons/fa";
+import styled from "styled-components";
+import Layout from "@/components/Layout";
+import DashboardEvent from "@/components/DashboardEvent";
 
 export default function DashboardPage({ events, token }) {
   const router = useRouter();
