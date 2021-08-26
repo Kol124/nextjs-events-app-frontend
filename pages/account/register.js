@@ -85,8 +85,8 @@ export default function RegisterPage() {
 }
 
 const Register = styled.div`
-  margin: 7% auto 0 auto;
   max-width: 50rem;
+  margin: 2rem auto;
   background-color: #f6f6f6;
   padding: 3rem 3rem 2.5rem 3rem;
   box-shadow: 0.5rem 1rem 1.3rem rgba(220, 220, 220, 0.4);
