@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { FaUser } from "react-icons/fa";
 import styled from "styled-components";
 import Layout from "@/components/Layout";
-import DashboardEvent from "@/components/DashboardEvent";
+import DashboardItem from "@/components/DashboardItem";
 
 export default function DashboardPage({ events, token }) {
   const router = useRouter();
@@ -37,7 +37,7 @@ export default function DashboardPage({ events, token }) {
         <h3>My Events</h3>
 
         {events.map((evt) => (
-          <DashboardEvent key={evt.id} evt={evt} handleDelete={deleteEvent} />
+          <DashboardItem key={evt.id} evt={evt} handleDelete={deleteEvent} />
         ))}
       </DashBoardDetails>
     </Layout>

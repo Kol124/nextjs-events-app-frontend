@@ -2,9 +2,9 @@ import Link from "next/link";
 import styled from "styled-components";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
 
-export default function DashboardEvent({ evt, handleDelete }) {
+export default function DashboardItem({ evt, handleDelete }) {
   return (
-    <DashBoardItem>
+    <ItemContainer>
       <Link href={`/events/${evt.slug}`}>
         <Name>{evt.name}</Name>
       </Link>
@@ -17,11 +17,11 @@ export default function DashboardEvent({ evt, handleDelete }) {
       <a href="#" onClick={() => handleDelete(evt.id)}>
         <FaTimes /> <span>Delete</span>
       </a>
-    </DashBoardItem>
+    </ItemContainer>
   );
 }
 
-const DashBoardItem = styled.div`
+const ItemContainer = styled.div`
   border: 2px #f1f1f1 solid;
   margin: 1.5rem 0 0;
   padding: 1rem;
