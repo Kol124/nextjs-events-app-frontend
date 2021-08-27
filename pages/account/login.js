@@ -1,7 +1,7 @@
-import { FaUser } from "react-icons/fa";
+import { useState, useEffect, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState, useEffect, useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import styled from "styled-components";
 import Layout from "@/components/Layout";

@@ -45,7 +45,7 @@ export default function DashboardPage({ events, token }) {
 }
 
 const DashBoardDetails = styled.main`
-  margin: 2rem 0 0;
+  margin: 2rem 0;
   background-color: #f6f6f6;
   padding: 3rem 3rem 2.5rem 3rem;
   box-shadow: 0.5rem 1rem 1.3rem rgba(220, 220, 220, 0.4);
