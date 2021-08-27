@@ -50,7 +50,7 @@ const Container = styled.main`
 `;
 
 Layout.defaultProps = {
-  title: "Events | Find the hottest parties",
+  title: "Events | Find the hottest Events",
   description: "Find the latest Events and other music festivals",
   keywords: "music, festivals, dj, edm, events",
 };

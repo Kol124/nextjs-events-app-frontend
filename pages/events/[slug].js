@@ -1,16 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { API_URL } from "@/config/index";
-import styles from "@/styles/Event.module.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Layout from "@/components/Layout";
-import EventMap from "@/components/EventMap";
 
 export default function EventPage({ evt }) {
   return (
-    <Layout>
-      <div className={styles.event}>
+    <Layout title={evt.name}>
+      <div>
         <span>
           {new Date(evt.date).toLocaleDateString("en-US")} at {evt.time}
         </span>
@@ -18,7 +16,7 @@ export default function EventPage({ evt }) {
 
         <ToastContainer />
         {evt.image && (
-          <div className={styles.image}>
+          <div>
             <Image
               src={evt.image.formats.medium.url}
               width={960}
@@ -34,41 +32,13 @@ export default function EventPage({ evt }) {
         <h3>Venue: {evt.venue}</h3>
         <p>{evt.address}</p>
 
-        <EventMap evt={evt} />
-
         <Link href="/events">
-          <a className={styles.back}>{"<"} Go Back</a>
+          <a>{"<"} Go Back</a>
         </Link>
       </div>
     </Layout>
   );
 }
-
-// export async function getStaticPaths() {
-//   const res = await fetch(`${API_URL}/events`);
-//   const events = await res.json();
-
-//   const paths = events.map((evt) => ({
-//     params: { slug: evt.slug },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: true,
-//   };
-// }
-
-// export async function getStaticProps({ params: { slug } }) {
-//   const res = await fetch(`${API_URL}/events?slug=${slug}`);
-//   const events = await res.json();
-
-//   return {
-//     props: {
-//       evt: events[0],
-//     },
-//     revalidate: 1,
-//   };
-// }
 
 export async function getServerSideProps({ query: { slug } }) {
   const res = await fetch(`${API_URL}/events?slug=${slug}`);
