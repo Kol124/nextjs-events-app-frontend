@@ -41,7 +41,7 @@ export default function Footer() {
         {/* <p>
             <Link href="/about">About This Project</Link>
           </p> */}
-        <p>Copyright &copy; DJ Events 2021</p>
+        <p>Copyright &copy; FESTA 2021</p>
       </FooterText>
     </Foot>
   );
