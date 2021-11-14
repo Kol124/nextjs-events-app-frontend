@@ -8,24 +8,24 @@ export default function Footer() {
         <Image
           src="/images/red-bull-elecktropedia.png"
           alt="Red Bull"
-          width={95}
-          height={60}
+          width={45}
+          height={25}
         />
-        <Image src="/images/StuBru.jpg" alt="Stru Bru" width={70} height={70} />
-        <Image src="/images/pickx.png" alt="Pickx" width={60} height={60} />
+        <Image src="/images/StuBru.jpg" alt="Stru Bru" width={40} height={40} />
+        <Image src="/images/pickx.png" alt="Pickx" width={30} height={30} />
         <Image
           src="/images/proximus.png"
           alt="Proximus"
-          width={120}
-          height={25}
+          width={80}
+          height={10}
         />
         <Image
           src="/images/blox-blanc.jpg"
           alt="Blox Blanc"
-          width={90}
-          height={45}
+          width={45}
+          height={25}
         />
-        <Image src="/images/tarmac.png" alt="Tarmac" width={60} height={60} />
+        <Image src="/images/tarmac.png" alt="Tarmac" width={50} height={40} />
       </FooterImages>
       <FooterText>
         <a
