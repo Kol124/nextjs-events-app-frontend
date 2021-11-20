@@ -68,7 +68,7 @@ const Foot = styled.footer`
 `;
 
 const FooterImages = styled.div`
-  width: 85%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,7 +80,7 @@ const FooterImages = styled.div`
   & > * {
     margin-right: 4rem !important;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 480px) {
       margin-bottom: 2rem !important;
     }
   }
